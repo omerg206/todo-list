@@ -1,5 +1,4 @@
 {
-  
   "name": "todo-list-server",
   "version": "1.0.0",
   "description": "todo list server",
@@ -14,7 +13,6 @@
   },
   "author": "omer golan",
   "license": "ISC",
-
   "bugs": {
     "url": "https://github.com/omerg206/todo-list/issues"
   },
@@ -25,7 +23,9 @@
     "@something": "src/foo"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "helmet": "^3.22.0",
     "module-alias": "^2.2.2"
   },
   "devDependencies": {

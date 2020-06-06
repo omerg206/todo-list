@@ -1,12 +1,23 @@
 require('module-alias/register');
-const ConfigService = require('@src/services/config.service')
+
+const ConfigService = require('@src/services/config.service');
+const routes = require('@src/routes/routes.js');
+const express = require('express');
+const helmet = require('helmet');
+const  bodyParser = require('body-parser');
 
 
-const express = require('express')
 const app = express();
+app.use(helmet());
+app.use(bodyParser.json());
 
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use('/', routes); // all routes
+
+
+
+
+
 
 app.listen(ConfigService.getConfigAttr('SERVER_PORT'),
    () => {
