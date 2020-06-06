@@ -1,3 +1,7 @@
 {
-  "SERVER_PORT": 3000
+  "serverPort": 3000,
+  "mongodb": {
+    "mongodbUrl": "mongodb://localhost:27017",
+    "dbName": "todolist"
+  }
 }

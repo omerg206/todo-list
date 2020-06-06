@@ -5,6 +5,7 @@ require('module-alias/register');
 
 class ConfigService {
      _config = {};
+     _mongodb = {};
 
      constructor(){    
         if (!ConfigService.instance) {
@@ -14,14 +15,13 @@ class ConfigService {
 
         Object.freeze(ConfigService.instance);
         return ConfigService.instance;  
-        
-
     }
 
 
     _setConfig()  {
         const buffer =  fs.readFileSync(path.join(__dirname, '..', '..','assets', 'config.json')); 
         this._config = JSON.parse(buffer);
+        this._mongodb = this._config.mongodb;
     }
 
     getConfig(){
@@ -30,6 +30,10 @@ class ConfigService {
 
     getConfigAttr(attr){
         return this._config[attr];
+    }
+
+    getMongodbConfig(){
+        return this._mongodb;
     }
 
 }
